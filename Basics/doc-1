@@ -120,3 +120,14 @@ Global Scope vs Local Scope
 - any variable outside code block {} is said to be in Global Scope
 - can be access anywhere in the program
 - Gotchas : name collisions, modify by mistake
+
+Local Scope
+- can not be access from outside code blocks
+- if - NOT VAR
+
+
+First Class Function / Callback Function / Higher Order Functions
+- Functions are first class objects -stored in a variable (expression), passed as argument to another function, return
+  from the function(closure)
+- Higher order function - accepts another function as an argument or return another function as a result
+- Callback Function - passed to a another function as an argument and executed inside that function
