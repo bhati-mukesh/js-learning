@@ -53,7 +53,7 @@ Data Types
     2.2 Function
     2.3 Object
 
-To check the dataType use - typeof operator
+To check the dataType use - typeof operator (uninary operator)
 Example 1 console.log(typeof "hello") 21 console.log(typeof variable_name)
 
 
@@ -82,3 +82,41 @@ Example:2 const obj2 = {
                         }
 both ways are valid
 
+String Methods
+- toLowerCase
+- toUpperCase
+- charAt()
+- indexOf()
+- trim()
+- includes
+- startsWith
+- slice
+
+types of loop
+- for
+- while
+- do
+
+other loops
+- for of (use to iterate over array)
+- for in (use to iterate over key of object )
+
+Null and undefined
+- both represent "no value"
+- undefined: js can not find value for this
+    - variable without values
+    - missing function arguments
+    - missing object properties
+    Example: 20 + undefines => NaN
+- null: developer sets the value 
+    Example: 20 + null => 20
+
+Truthy and falsy value
+"",'',``,0,-0,NaN,false,null,undefined -falsy 
+- all other are truthy
+
+
+Global Scope vs Local Scope
+- any variable outside code block {} is said to be in Global Scope
+- can be access anywhere in the program
+- Gotchas : name collisions, modify by mistake
