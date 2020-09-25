@@ -169,7 +169,124 @@ DOM
 - querySelector('any css) : select Single
 - querySelectorAll('any css') : select all (forEach and all are applicable)
    
-element.childrenNode => array of nodes including text node
+element.childrenNode => array of nodes(NodeList) including text node
 element.children => array of nodes 
 
-element.parentNode
+
+Navigating DOM
+- children : returns all childNodes excluding whitespace which is treated as a text node
+- firstChild : possible it would be text node. use 2 time in chaining fashion
+- lastChild : possible it would be text node. use 2 time in chaining fashion
+- childrenNode : returns all childNodes including whitespace which is treated as a text node
+
+Navigating Up
+- element.parentNode : retrun ParentNode of given element.
+- element.parentElement : retrun ParentNode of given element.
+
+
+Navigating to Siblings (if sibling is not present/available null will be written)
+- previousSiblings : return textNode (use in chaining to get elementNode)
+- nextSiblings : return textNode (use in chaining to get elementNode)
+- previousElementSibling : return element not textNode(exclude)
+- nextElementSibling : return element not textNode(exclude)
+
+
+Text value of Element
+- nodeValue: element.childNodes[0].nodeValue (need extra step because of textNode(whitespace))
+- textContent : element.textContent (no need of extra step)
+
+
+getAttribute & setAttribute
+- getAttribute: element.getAttribute('class') //return class name in single string
+- getAttribute: element.setAttribute('class','myclass custom-class') //set the class property to element
+
+
+classList and className
+- className - use to get and set class attribute of an element (element.className(get), element.className="demo"(set))
+- classList - use to add and remove classes on element (element.classList.add('demo'),element.classList.add('demo')element.classList.remove('demo') and element.classList.contains('demo')(return boolean value))
+
+
+createElement , createTextNode and appendChild
+- document.createElement("tag_name")(example: div)
+
+
+insertBefore
+- insertBefore(element,'location')
+- Example  const element2 = document.getElementById('elem2')
+           document.body.insertBefore(element,element2)
+
+replaceChild
+- replaceChild(new,old)
+
+
+InnerText && prepend
+- prepend (opposite of append)
+
+
+remove & removeChild
+- element.remove()
+- parentElement.removeChild('child_element')
+
+Note:
+const parentDiv = document.querySelector('#parent')
+const headings = parentDiv.querySelector('h1') // return all h1 which are inside parentDiv and in whole body
+
+Events 
+- Mouse Events
+    - click
+    - mousedown -  button is pressed
+    - mouseup - button is released
+    - mouseenter - moved onto an element
+    - mouseleave - moved out of an element
+
+- key Events
+    - keypress - when key is press
+    - keydown - when key is down
+    - keyup - when key is released
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
