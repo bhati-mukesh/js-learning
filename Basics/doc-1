@@ -272,6 +272,14 @@ sessionStorage.setItem('name','john')
 
 
 
+======== Objects ========
+object is collection of key (proprty) value pairs
+property value can be strings, numbers, booleans, arrays and functions however if the property value is a function it's called a method
+
+object literal syntax- {}
+dot notation 
+
+========= this ==========
 
 
 
