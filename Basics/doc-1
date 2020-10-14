@@ -280,22 +280,72 @@ object literal syntax- {}
 dot notation 
 
 ========= this ==========
+abc.func()
+- watch before function if there is object before notation then this will represent that object
+
+- In regular functions (not arrow) "this" is determined by "HOW"!!! a function is invoked(left of .)
+- default to global - windows
+- arrow functions - pump the breaks
 
 
+Factory Function :
+Constructor Function (common practice to use firstletter Capital)
+- new(keyword) => create new object, points to it and omit return
+
+Example:
+const Person = function(firstName,lastName){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.fullName = function(){
+        console.log(`This Is ${firstName}`)
+    }
+    console.log("just printing the scope",this)
+}
+
+const mukesh = new Person("mukesh","bhati")  // now this point to mukesh Object
+mukesh.fullName()  // This is mukesh
+
+const person1 = Person("per","son")   // now here -> "this" will point to window object
+person1.fullName()   // Error, bcuz it will return undefined. 
 
 
+Constructor Property:
+- All objects in javascript have access to constructor property that returns a constructor function that created it.
+- built in constructor functions
+- arrays and functions are objects in javascript
+
+Example -1:
+const Person = function(firstName,lastName){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.fullName = function(){
+        console.log(`This Is ${firstName}`)
+    }
+    console.log("just printing the scope",this)
+}
+
+const mukesh = new Person("mukesh","bhati")  // now this point to mukesh Object
+console.log(mukesh.constructor)  // return constructor object but will display as object(bcuz function are objects in js)
+
+Example - 2:
+const bob = {};
+console.log(bob.constructor)     // return constructor function 
+
+Example - 3:
+const list = []
+console.log(list.constructor)   
+
+Example - 4 :
+const sayHi = function(){}
+console.log(sayHi.constructor)
+
+***
+Example - 5 :
+const susy = new mukesh.constructor('susy','carpenter');   // mukesh refere to previously create object. with help of that we can create new object
+susy.fullName() // return fullName of susy
 
 
-
-
-
-
-
-
-
-
-
-
+Prototype:
 
 
 
