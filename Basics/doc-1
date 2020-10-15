@@ -346,14 +346,94 @@ susy.fullName() // return fullName of susy
 
 
 Prototype:
+- Prototypal Inheritance Modal
+js uses prototypal inheritance modal. that means that every constructor function/class  has a 
+prototype property that is shared by every instance of the constructor/class. so any properties and 
+methods or prototype can be accessed by every instance. prototype property returns a object 
+
+Example:
+function Account(name,initialBalance){
+    this.name = name;
+    this.balance = initialBalance;
+}
+
+console.log(Account.prototype)
+
+const john = new Account('john',200);
+const bob = new Account('bob',0);
 
 
+Account.prototype.bank = "IndusInd";
+Account.prototype.deposit = function(amount){
+    this.balance += amount
+    console.log(`Hello ${this.name}, your balance is ${this.balance} `)
+};
+console.log(john.bank)
+console.log(bob)
+
+john.deposit(3000)
+
+Property lookup in js
+- If child does not have ask parent for Everything in JS is an Object;
+
+Class
+ES-6 classes - syntatic sugar
+prototype Inheritance
+
+Example:
+class Account{
+    constructor(name,initialBalance){
+        this.name = name
+        this.balance = initialBalance
+    }
+    back = city           //property will be goes into each n every object(instance)
+    deposit(amount){       //methods will be goes into prototype
+    this.balance += amount
+    console.log(`Hello ${this.name}, your balance is ${this.balance} `)
+    }
+}
+
+const john = new Account("john",200);
+console.log(john)                     // look at prototype
+console.log(john.name)
+john.deposit(500)
+console.log(john.bank)
+
+const bob = new Account("bob",200);
+console.log(bob)                     // look at prototype
+console.log(bob.name)
+bob.deposit(500)
+console.log(bob.bank)
 
 
+- Call, Bind, Apply
+- call- runs instantly, arguments - list of items
+- apply - runs instantly, arguments - array of items
+- call n apply are same just differ 
+- in func.call(obj,arg1,arg2,arg3) and for func.apply(obj,[1,2,3,])
+- with help of call we can call any method on any object
+Example
+function printName(){
+    console.log(`I'm ${this.name}`)
+}
 
+const mukesh = {
+    name : "mukesh"
+}
+const xyz = {
+    name : "xyz"
+}
 
+printName.call(mukesh)  // call paramter contains, where this should be point for printName method
+printName.call(xyz)
+printName.call({name:"new"})  // even this can be point to new object
 
+Apply - assign, use later, arguments - list of items
+const tempMethod = printName.apply(mukesh)
 
+tempMethod()            // we can call letter
+
+Example for button
 
 
 
