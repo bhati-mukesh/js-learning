@@ -434,6 +434,7 @@ const tempMethod = printName.apply(mukesh)
 tempMethod()            // we can call letter
 
 Example for button
+will see in next video
 
 
 
