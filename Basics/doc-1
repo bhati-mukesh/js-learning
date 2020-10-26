@@ -437,18 +437,82 @@ Example for button
 will see in next video
 
 
+Functions Section
+1 IIFE immediately -Invoked function expression
+  older approach - new Modules
+  simple approach to avoid global scope pollution
+  good way at protecting the scope of your function and the varibles within it
+  global namespace, extra steps
+
+Example 
+  (function(){
+      const num1 = 10
+      const num2 = 20
+      console.log(`total is ${num1 + num2}`)
+  })()
+  // passing arguments
+  (function(num1,num2){
+      console.log(`total is ${num1 + num2}`)
+  })(10,20)
+  // returning value
+  const result = (function(num1,num2){
+      return num1+num2
+    })(10,20)
+
+2 Hoisting
+  function and var declaration are hoisted
+  safer to access only after initialized
+
+3 closure
+   closure gives you an access to an outer function's scope from inner function
+   make private variables with closures
+
+Example
+    function outer(){
+        let privateVar = 'secret'
+        function inner(){
+            console.log(`hello there secret is: ${privateVar}`)
+        }
+        return inner
+    }
+var value = outer()  
+value() // hello there secret is secret - even after execution context of outer is over still we ca access outer function variables
+
+scopes
+function scope - var
+block scope - let n const - anything within {}
+example
+var total = 1000
+var test = true
+if(test){
+    var total = `apples and orange`
+    console.log(`hello there`)
+}
+console.log(total)  // apples and oranges -- bcuz var is function not block scope
 
 
+String literals 
+tagged template literals
+Example
+const author = 'some Author'
+const statement = 'some Statement'
 
+const quote = highlight`Here is the ${statement} by ${author} and it could not be more true`;
+console.log(quote)  //highlight is a function
 
+function highlight(text,...args){
+    const awesomeText = text.map((item,index)=>{
+        return `${item} <strong class="blue">${args[index] || ""}</strong>`
+    });
+    retrun awesomeText.join("")
+}
 
-
-
-
-
-
-
-
+Arrow function or Fat arrow function
+no name, always expression,assign to variable
+no function keyword
+'this'
+// regular function : 'this' refers parent, left of the dot
+// arrow function : refers to it's current surrounding scope
 
 
 
