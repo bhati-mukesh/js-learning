@@ -514,8 +514,35 @@ no function keyword
 // regular function : 'this' refers parent, left of the dot
 // arrow function : refers to it's current surrounding scope
 
+Destructuring
+faster/easier way to access/unpack values from array 
+object into variables
+Array
+
+new string methods in ES6
+startsWith(),endsWith(),includes(),repeat()
+
+for of - loops through the values of an iterables object
+string, array, map, set, etc - Not object
+unlike forEach - we can use break and continue
+
+spread operator
+Allows an iterables to spread/expand individually inside reciever
+split into single items and copy them
+
+rest operator
+gathers/collects the items
+
+Array.from and Array.of - Not on the Prototype
+Array.from
+Array.of
+of - creates a new Array instance from a variable number of arguments
+from - returns Array object from any object with a length property or an iterable object
+from - turns array-like/ish into array - string,nodeList,set
+Example
+const friends = Array.of('john',2,true)  //create a new array
+const udemy = Array.from("udemy")
 
 
-
-
-
+Modules
+named/default -export 
