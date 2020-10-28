@@ -546,3 +546,7 @@ const udemy = Array.from("udemy")
 
 Modules
 named/default -export 
+
+Async
+Js is single threaded, synchronous language
+callback,callback hell,promises
