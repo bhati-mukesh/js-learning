@@ -550,3 +550,21 @@ named/default -export
 Async
 Js is single threaded, synchronous language
 callback,callback hell,promises
+
+
+Ajax
+Example:
+const xhr = new XMLHttpRequest();
+xhr.open('GET','url');
+xhr.onreadystatechange = function(){
+    console.log(xhr)
+    if(xhr.readyState == 4 && xhr.status == 200){
+        console.log(xhr.responseText);
+    }else{
+        console.log({
+            status: xhr.status,
+            text: xhr.statusText
+        })
+    }
+}
+xhr.send()
